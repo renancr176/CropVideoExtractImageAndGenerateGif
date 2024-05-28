@@ -58,7 +58,7 @@ namespace CropVideoExtractAnimatedImage.Controllers
                     throw new Exception("Video base 64 data not provided or is invalid base 64 string.");
                 
                 if (!validVideoFormats.Contains(extension))
-                    throw new Exception($"Invalid format format, video formats alowed are {string.Join(", ", validVideoFormats)}.");
+                    throw new Exception($"Invalid video format, allowed formats are {string.Join(", ", validVideoFormats)}.");
 
                 #endregion
 
@@ -161,7 +161,7 @@ namespace CropVideoExtractAnimatedImage.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("Could not merge images");
+                return BadRequest(e);
             }
         }
     }
